@@ -1,32 +1,31 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-    const totalPriseOrders = quantity * pricePerDroid;
+// Запропонуйте користувачу ввести число за допомогою prompt().
+// Збережіть введене значення у змінну number.
+// Перевірте, чи дорівнює змінна number числу 10:
+//    Якщо так  виведіть повідомлення 'Вірно' у alert().
+//    Якщо ні  виведіть 'Невірно'. 
 
-    if(totalPriseOrders > customerCredits) {
-        return `Insufficient funds!`;
-    } else {
-       return `You ordered ${quantity} droids worth ${totalPriseOrders} credits!`;
-    }
+// Підказка: prompt завжди повертає рядок (String), тому перед перевіркою  
+// перетворіть значення на число за допомогою Number().
+
+const number = Number(prompt('Введіть число'));
+if(number === 10) {
+    alert('Вірно');
+} else {
+    alert('Невірно');
 }
 
-console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
 
+// У змінній min лежить випадкове число від 0 до 59.
+// Визначте, в яку чверть години потрапляє
+// це число (у першу, другу, третю чи четверту).
+// Виведіть в alert відповідне повідомлення, наприклад:
+// "10 входить в першу чверть"
 
-function formatMessage(message, maxLength) {
+// const min = Math.floor(Math.random() * 59);
 
-    if(message.length <= maxLength) {
-        return message;
-    } else {
-        return message.slice(0, maxLength) + "...";
-    }
+const min = Math.floor(Math.random() * 59);
+if(min >= 0 && min <=14) {
+    alert(`${min}  входить в першу чверть`);
+} else if(min >= 15 && min <= 29) {
+    alert(`${min}  входить в першу чверть`);
 }
-
-console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
-console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
-console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
-console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
